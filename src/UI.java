@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -123,6 +124,29 @@ public class UI extends Application{
         //firstBox.setPadding(new Insets(0, 20, 10, 20));
 
         buttonFilter.setMaxWidth(Double.MAX_VALUE);
+        buttonUpper.setMaxWidth(Double.MAX_VALUE);
+        buttonLower.setMaxWidth(Double.MAX_VALUE);
+
+        firstBox.setHgrow(buttonFilter, Priority.ALWAYS);
+        firstBox.setHgrow(buttonUpper, Priority.ALWAYS);
+        firstBox.setHgrow(buttonLower, Priority.ALWAYS);
+
+        buttonRNA.setMaxWidth(Double.MAX_VALUE);
+        buttonReverse.setMaxWidth(Double.MAX_VALUE);
+        buttonComplementary.setMaxWidth(Double.MAX_VALUE);
+
+        secondBox.setHgrow( buttonRNA, Priority.ALWAYS);
+        secondBox.setHgrow(buttonReverse, Priority.ALWAYS);
+        secondBox.setHgrow(buttonComplementary, Priority.ALWAYS);
+
+        buttonReverseComplementary.setMaxWidth(Double.MAX_VALUE);
+        buttonGCContent.setMaxWidth(Double.MAX_VALUE);
+        buttonLength.setMaxWidth(Double.MAX_VALUE);
+
+        thirdBox.setHgrow(buttonReverseComplementary, Priority.ALWAYS);
+        thirdBox.setHgrow(buttonGCContent, Priority.ALWAYS);
+        thirdBox.setHgrow(buttonLength, Priority.ALWAYS);
+
 
         mainBox.setSpacing(10);
         mainBox.setPadding(new Insets(0, 20, 10, 20));
@@ -130,9 +154,10 @@ public class UI extends Application{
 
         firstBox.getChildren().addAll(buttonFilter, buttonUpper, buttonLower);
         firstBox.setAlignment(Pos.CENTER);
-        firstBox.setMaxWidth(Double.MAX_VALUE);
         secondBox.getChildren().addAll(buttonRNA, buttonReverse, buttonComplementary);
+        secondBox.setAlignment(Pos.CENTER);
         thirdBox.getChildren().addAll(buttonReverseComplementary, buttonGCContent, buttonLength);
+        thirdBox.setAlignment(Pos.CENTER);
         fourthBox.getChildren().addAll(buttonClear);
 
         mainBox.getChildren().addAll(inputArea, buttonFlip, outputArea, firstBox, secondBox, thirdBox, fourthBox, sliderLabel, slider);
